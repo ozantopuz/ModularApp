@@ -12,7 +12,7 @@ class GameDetailInteractor @Inject constructor(
     override fun execute(params: Params): Observable<DataHolder<GameDetail>> {
         when {
             params.id.toString().isEmpty() -> throw IllegalArgumentException("Invalid id")
-            else -> return gameRepository.getGameDetail(
+            else -> return gameRepository.fetchGameDetail(
                 params.id
             ).toObservable()
         }

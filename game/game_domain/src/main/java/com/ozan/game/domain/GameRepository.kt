@@ -7,5 +7,5 @@ interface GameRepository {
 
     fun fetchGames(request: GamesRequest): Single<DataHolder<GamesResponse>>
 
-    fun getGameDetail(id: Int): Single<DataHolder<GameDetail>>
+    fun fetchGameDetail(id: Int): Single<DataHolder<GameDetail>>
 }

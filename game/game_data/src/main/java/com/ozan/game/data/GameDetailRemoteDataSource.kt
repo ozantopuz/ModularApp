@@ -11,7 +11,7 @@ class GameDetailRemoteDataSource @Inject constructor(
 ) : DataSource.RetrieveRemoteDataSource<Int, GameDetail> {
 
     override fun getResult(request: Int): Single<DataHolder<GameDetail>> =
-        gameServices.getGameDetail(request)
+        gameServices.fetchGameDetail(request)
 
             .map { return@map DataHolder.Success(it) }
 }

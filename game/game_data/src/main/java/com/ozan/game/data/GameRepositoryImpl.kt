@@ -26,7 +26,7 @@ class GameRepositoryImpl @Inject constructor(
             }
             .subscribeOn(Schedulers.io())
 
-    override fun getGameDetail(id: Int): Single<DataHolder<GameDetail>> =
+    override fun fetchGameDetail(id: Int): Single<DataHolder<GameDetail>> =
         gameDetailRemoteDataSource
             .getResult(id)
             .map { it }

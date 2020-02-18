@@ -18,7 +18,7 @@ interface GameServices {
     ): Single<PagedApiResponse<List<Game>>>
 
     @GET("games/{id}")
-    fun getGameDetail(
+    fun fetchGameDetail(
         @Path("id") id: Int?
     ): Single<GameDetail>
 }
