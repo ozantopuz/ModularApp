@@ -12,9 +12,7 @@ class GamesInteractor @Inject constructor(
     override fun execute(params: Params): Observable<DataHolder<GamesResponse>> {
         when {
             params.page.toString().isEmpty() -> throw IllegalArgumentException("Invalid page")
-            else -> return gameRepository.fetchGames(
-                GamesRequest(params.page)
-            ).toObservable()
+            else -> return gameRepository.fetchGames(params.page).toObservable()
         }
     }
 

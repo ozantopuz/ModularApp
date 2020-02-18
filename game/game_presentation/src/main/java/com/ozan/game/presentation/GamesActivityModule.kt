@@ -1,8 +1,8 @@
-package com.ozan.game.presentation.games
+package com.ozan.game.presentation
 
 import com.ozan.core.injection.scope.ActivityScope
-import com.ozan.game.presentation.GamesActivity
 import com.ozan.game.presentation.gamedetail.GameDetailFragmentModule
+import com.ozan.game.presentation.games.GamesFragmentModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

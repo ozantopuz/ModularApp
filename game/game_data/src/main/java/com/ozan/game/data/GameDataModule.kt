@@ -3,7 +3,6 @@ package com.ozan.game.data
 import com.ozan.core.data.source.DataSource
 import com.ozan.game.domain.GameDetail
 import com.ozan.game.domain.GameRepository
-import com.ozan.game.domain.GamesRequest
 import com.ozan.game.domain.GamesResponse
 import dagger.Module
 import dagger.Provides
@@ -20,7 +19,7 @@ class GameDataModule {
 
     @Provides
     @Singleton
-    fun provideGamesRemoteDataSource(gameServices: GameServices): DataSource.RetrieveRemoteDataSource<GamesRequest, GamesResponse> =
+    fun provideGamesRemoteDataSource(gameServices: GameServices): DataSource.RetrieveRemoteDataSource<Int, GamesResponse> =
         GamesRemoteDataSource(gameServices)
 
     @Provides

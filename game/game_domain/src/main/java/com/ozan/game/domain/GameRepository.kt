@@ -5,7 +5,7 @@ import io.reactivex.Single
 
 interface GameRepository {
 
-    fun fetchGames(request: GamesRequest): Single<DataHolder<GamesResponse>>
+    fun fetchGames(page: Int): Single<DataHolder<GamesResponse>>
 
     fun fetchGameDetail(id: Int): Single<DataHolder<GameDetail>>
 }

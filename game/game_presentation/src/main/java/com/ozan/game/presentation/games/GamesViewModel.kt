@@ -64,6 +64,7 @@ class GamesViewModel @Inject constructor(
                         this.page.currentPage++
                         count = it.data.count!!
 
+
                         Observable.fromIterable(it.data.results)
                             .map { item -> mapper.apply(item) }
                             .toList()

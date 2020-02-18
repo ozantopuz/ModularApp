@@ -2,17 +2,16 @@ package com.ozan.game.data
 
 import com.ozan.core.data.source.DataSource
 import com.ozan.core.model.DataHolder
-import com.ozan.game.domain.GamesRequest
 import com.ozan.game.domain.GamesResponse
 import io.reactivex.Single
 import javax.inject.Inject
 
 class GamesRemoteDataSource @Inject constructor(
     private val gameServices: GameServices
-) : DataSource.RetrieveRemoteDataSource<GamesRequest, GamesResponse> {
+) : DataSource.RetrieveRemoteDataSource<Int, GamesResponse> {
 
-    override fun getResult(request: GamesRequest): Single<DataHolder<GamesResponse>> =
-        gameServices.fetchGames(page = request.page)
+    override fun getResult(page: Int): Single<DataHolder<GamesResponse>> =
+        gameServices.fetchGames(page = page)
 
             .map {
                 return@map DataHolder.Success(

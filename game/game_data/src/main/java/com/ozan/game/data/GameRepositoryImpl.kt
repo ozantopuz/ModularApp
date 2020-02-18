@@ -5,19 +5,18 @@ import com.ozan.core.error.DefaultErrorFactory
 import com.ozan.core.model.DataHolder
 import com.ozan.game.domain.GameDetail
 import com.ozan.game.domain.GameRepository
-import com.ozan.game.domain.GamesRequest
 import com.ozan.game.domain.GamesResponse
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class GameRepositoryImpl @Inject constructor(
-    private val gamesRemoteDataSource: DataSource.RetrieveRemoteDataSource<GamesRequest, GamesResponse>,
+    private val gamesRemoteDataSource: DataSource.RetrieveRemoteDataSource<Int, GamesResponse>,
     private val gameDetailRemoteDataSource: DataSource.RetrieveRemoteDataSource<Int, GameDetail>
 ) : GameRepository {
-    override fun fetchGames(request: GamesRequest): Single<DataHolder<GamesResponse>> =
+    override fun fetchGames(page: Int): Single<DataHolder<GamesResponse>> =
         gamesRemoteDataSource
-            .getResult(request)
+            .getResult(page)
             .map { it }
             .onErrorReturn {
                 DataHolder.Fail(
