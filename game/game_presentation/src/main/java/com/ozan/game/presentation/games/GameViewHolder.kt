@@ -1,4 +1,4 @@
-package com.ozan.game.presentation
+package com.ozan.game.presentation.games
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +9,7 @@ import com.ozan.core.presentation.recyclerview.DisplayItem
 import com.ozan.core.presentation.recyclerview.ViewHolder
 import com.ozan.core.presentation.recyclerview.ViewHolderBinder
 import com.ozan.core.presentation.recyclerview.ViewHolderFactory
+import com.ozan.game.presentation.R
 import kotlinx.android.synthetic.main.layout_item_game.view.*
 import javax.inject.Inject
 
@@ -16,13 +17,8 @@ class GameViewHolder private constructor(itemView: View) : ViewHolder<GameViewEn
 
     override fun bind(item: GameViewEntity) {
         itemView.textView.text = item.name
-        item.backgroundImage?.let {
-            itemView.imageView.loadImage(it)
-        }
-
-        itemView.setOnClickListener {
-            itemClickListener?.invoke(itemView, item)
-        }
+        item.backgroundImage?.let { itemView.imageView.loadImage(it) }
+        itemView.setOnClickListener { itemClickListener?.invoke(itemView, item) }
     }
 
     internal class GameViewHolderFactory @Inject constructor() : ViewHolderFactory {

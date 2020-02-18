@@ -2,6 +2,7 @@ package com.ozan.game.presentation
 
 import com.ozan.core.presentation.recyclerview.*
 import com.ozan.game.presentation.GamePresentationConstants.TYPES.GAME
+import com.ozan.game.presentation.games.GameViewHolder
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

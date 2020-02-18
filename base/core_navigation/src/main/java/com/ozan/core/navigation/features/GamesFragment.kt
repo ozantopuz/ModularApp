@@ -7,7 +7,7 @@ import com.ozan.core.navigation.loadFragmentOrReturnNull
 object GamesFragment : Feature<Fragment> {
 
     private const val GAMES_FRAGMENT =
-        "$PACKAGE_NAME.game.presentation.GamesFragment"
+        "$PACKAGE_NAME.game.presentation.games.GamesFragment"
 
     override val dynamicStart: Fragment?
         get() = GAMES_FRAGMENT.loadFragmentOrReturnNull()

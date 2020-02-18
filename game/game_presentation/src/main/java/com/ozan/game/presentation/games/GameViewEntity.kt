@@ -1,7 +1,8 @@
-package com.ozan.game.presentation
+package com.ozan.game.presentation.games
 
 import com.ozan.core.presentation.entity.ViewEntity
 import com.ozan.core.presentation.recyclerview.DisplayItem
+import com.ozan.game.presentation.GamePresentationConstants
 
 class GameViewEntity(
     val id: Int?,
@@ -11,6 +12,5 @@ class GameViewEntity(
     val rating: Double?
 ) : ViewEntity, DisplayItem {
 
-    override fun type(): Int =
-        GamePresentationConstants.TYPES.GAME
+    override fun type(): Int = GamePresentationConstants.TYPES.GAME
 }

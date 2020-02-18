@@ -1,6 +1,7 @@
-package com.ozan.game.presentation
+package com.ozan.game.presentation.games
 
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -8,7 +9,9 @@ import com.ozan.core.model.DataHolder
 import com.ozan.core.navigation.controller.DefaultNavigationController
 import com.ozan.core.presentation.base.BaseFragment
 import com.ozan.core.presentation.extensions.setup
+import com.ozan.core.presentation.recyclerview.DisplayItem
 import com.ozan.core.presentation.recyclerview.RecyclerViewAdapter
+import com.ozan.game.presentation.R
 import kotlinx.android.synthetic.main.fragment_games.*
 import java.lang.ref.WeakReference
 import javax.inject.Inject
@@ -19,6 +22,11 @@ class GamesFragment : BaseFragment<GamesViewModel>() {
 
     @Inject
     protected lateinit var gamesAdapter: RecyclerViewAdapter
+
+    override fun getLayoutRes(): Int =
+        R.layout.fragment_games
+
+    override fun getModelClass() = GamesViewModel::class.java
 
     private val recyclerViewOnScrollListener = object : RecyclerView.OnScrollListener() {
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -37,10 +45,6 @@ class GamesFragment : BaseFragment<GamesViewModel>() {
         }
     }
 
-    override fun getLayoutRes(): Int = R.layout.fragment_games
-
-    override fun getModelClass() = GamesViewModel::class.java
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.navigationController = DefaultNavigationController(WeakReference(activity!!))
@@ -52,6 +56,13 @@ class GamesFragment : BaseFragment<GamesViewModel>() {
         recyclerView.apply {
             setup(context = context!!, adapter = gamesAdapter)
             addOnScrollListener(recyclerViewOnScrollListener)
+        }
+
+        gamesAdapter.itemClickListener = { _: View, item: DisplayItem ->
+            navigationController.navigateToGameDetailFragment(
+                R.id.frameLayout,
+                (item as GameViewEntity).id!!
+            )
         }
     }
 

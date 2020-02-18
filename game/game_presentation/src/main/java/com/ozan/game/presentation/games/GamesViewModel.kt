@@ -1,4 +1,4 @@
-package com.ozan.game.presentation
+package com.ozan.game.presentation.games
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
@@ -17,8 +17,8 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class GamesViewModel @Inject constructor(
-    private val gamesInteractor: Interactor.ReactiveRetrieveInteractor<Params, GamesResponse>,
-    private val gameViewEntityMapper: Function<Game, DisplayItem>,
+    private val interactor: Interactor.ReactiveRetrieveInteractor<Params, GamesResponse>,
+    private val mapper: Function<Game, DisplayItem>,
     private val errorFactory: ErrorFactory
 ) : BaseViewModel() {
 
@@ -50,11 +50,11 @@ class GamesViewModel @Inject constructor(
         }
     }
 
-    fun fetchGames(page: Int) {
+    private fun fetchGames(page: Int) {
         _gamesLiveData.value = DataHolder.Loading()
         val params = Params(page)
 
-        val gamesFetchDisposable = gamesInteractor.execute(params)
+        val gamesFetchDisposable = interactor.execute(params)
             .observeOn(Schedulers.computation())
             .subscribeOn(Schedulers.io())
             .subscribe({
@@ -65,7 +65,7 @@ class GamesViewModel @Inject constructor(
                         count = it.data.count!!
 
                         Observable.fromIterable(it.data.results)
-                            .map { item -> gameViewEntityMapper.apply(item) }
+                            .map { item -> mapper.apply(item) }
                             .toList()
                             .blockingGet()
                             .run {
@@ -89,7 +89,6 @@ class GamesViewModel @Inject constructor(
 
         action(gamesFetchDisposable)
     }
-
 
     data class Page(var currentPage: Int = 1, var pageSize: Int = 20)
 }

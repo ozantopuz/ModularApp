@@ -1,7 +1,7 @@
 package com.ozan.modularapp.injection.module
 
 import com.ozan.core.injection.scope.ActivityScope
-import com.ozan.game.presentation.GamesActivityModule
+import com.ozan.game.presentation.games.GamesActivityModule
 import com.ozan.modularapp.ui.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
