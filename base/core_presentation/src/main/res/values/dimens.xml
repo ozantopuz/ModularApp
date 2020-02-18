@@ -43,8 +43,7 @@
     <dimen name="text_size_xxxlarge">45sp</dimen>
 
     <!-- View Dimens -->
-    <dimen name="default_item_holder_height">196dp</dimen>
     <dimen name="default_app_bar_layout_height">280dp</dimen>
-    <dimen name="default_item_height">256dp</dimen>
+    <dimen name="item_height">256dp</dimen>
 
 </resources>

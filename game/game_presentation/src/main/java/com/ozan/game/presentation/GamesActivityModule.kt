@@ -6,8 +6,8 @@ import dagger.android.ContributesAndroidInjector
 
 @Module
 abstract class GamesActivityModule {
-
     @ActivityScope
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [GamesFragmentModule::class])
+
     abstract fun provideGamesActivity(): GamesActivity
 }
