@@ -1,8 +1,7 @@
-package com.ozan.myapplication2.game.domain
+package com.ozan.game.domain
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).

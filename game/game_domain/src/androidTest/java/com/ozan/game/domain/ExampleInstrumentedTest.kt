@@ -1,4 +1,4 @@
-package com.ozan.myapplication2.game.domain
+package com.ozan.game.domain
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.ozan.myapplication2.game.domain.test", appContext.packageName)
+        assertEquals("com.ozan.game.domain.test", appContext.packageName)
     }
 }

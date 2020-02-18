@@ -1,23 +1,23 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:53
-INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:53
-INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:53
-INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:53
-INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:53
-INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:53
-INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:53
+ADDED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:38
+INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:38
+INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:38
+INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:38
+INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:38
+INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:38
+INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:38
 	package
-		ADDED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:2:5-50
+		ADDED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:2:5-35
 		INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml
 		INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml
-		ADDED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:53
+		ADDED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:38
 		INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml
-		ADDED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:53
+		ADDED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:1-2:38
 		INJECTED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/ozan/Desktop/ModularApp/game/game_domain/src/main/AndroidManifest.xml:1:11-69
