@@ -16,6 +16,10 @@
             <option value="$PROJECT_DIR$/base/core_navigation" />
             <option value="$PROJECT_DIR$/base/core_presentation" />
             <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/game" />
+            <option value="$PROJECT_DIR$/game/game_data" />
+            <option value="$PROJECT_DIR$/game/game_domain" />
+            <option value="$PROJECT_DIR$/game/game_presentation" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -28,6 +28,11 @@ dependencies {
     implementation project(Modules.corePresentation)
     implementation project(Modules.coreNavigation)
 
+    // Game
+    implementation project(Modules.gameData)
+    implementation project(Modules.gameDomain)
+    implementation project(Modules.gamePresentation)
+
     // Support Libraries
     implementation SupportLibraries.appCompat
 }
