@@ -1,6 +1,3 @@
 <resources>
     <string name="app_name">dashboard_presentation</string>
-
-    <string name="release_date">Release Date: </string>
-    <string name="rating">Rating: </string>
 </resources>
