@@ -1,6 +1,6 @@
 package com.ozan.core.navigation
 
-const val PACKAGE_NAME = "com.ozan.modularappp"
+const val PACKAGE_NAME = "com.ozan"
 
 private val classMap = mutableMapOf<String, Class<*>>()
 

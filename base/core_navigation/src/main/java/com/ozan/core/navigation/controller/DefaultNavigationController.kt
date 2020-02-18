@@ -1,8 +1,8 @@
 package com.ozan.core.navigation.controller
 
 import androidx.fragment.app.FragmentActivity
-import com.ozan.core.navigation.features.GameActivity
 import com.ozan.core.navigation.features.GameDetailFragment
+import com.ozan.core.navigation.features.GamesActivity
 import com.ozan.core.navigation.features.GamesFragment
 import java.lang.ref.WeakReference
 
@@ -16,7 +16,7 @@ class DefaultNavigationController constructor(
                 replace(containerId, GamesFragment.dynamicStart!!).addToBackStack(null)
             })
 
-    override fun navigateToGamesActivity() = start(GameActivity.dynamicStart)
+    override fun navigateToGamesActivity() = start(GamesActivity.dynamicStart)
 
     override fun navigateToGameDetailFragment(containerId: Int, gameId: Int) =
         start(

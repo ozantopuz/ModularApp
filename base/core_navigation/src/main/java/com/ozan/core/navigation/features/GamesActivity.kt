@@ -4,7 +4,7 @@ import android.content.Intent
 import com.ozan.core.navigation.PACKAGE_NAME
 import com.ozan.core.navigation.loadIntentOrReturnNull
 
-object GameActivity : Feature<Intent> {
+object GamesActivity : Feature<Intent> {
 
     private const val MAIN = "$PACKAGE_NAME.game.presentation.GamesActivity"
 
