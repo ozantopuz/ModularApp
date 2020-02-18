@@ -2,7 +2,7 @@
  * App configuration
  */
 object Config {
-    const val applicationId = "com.ozan.myapplication2"
+    const val applicationId = "com.ozan.modularapp"
     const val minSdkVersion = Versions.minSdkVersion
     const val targetSdkVersion = Versions.targetSdkVersion
     const val compileSdkVersion = Versions.compileSdkVersion

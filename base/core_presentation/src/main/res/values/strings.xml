@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">core_presentation</string>
+    <string name="error_message_unknown_error">An unknown error has been occurred!</string>
+</resources>

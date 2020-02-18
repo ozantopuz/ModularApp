@@ -9,6 +9,12 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/base" />
+            <option value="$PROJECT_DIR$/base/core" />
+            <option value="$PROJECT_DIR$/base/core_data" />
+            <option value="$PROJECT_DIR$/base/core_domain" />
+            <option value="$PROJECT_DIR$/base/core_navigation" />
+            <option value="$PROJECT_DIR$/base/core_presentation" />
             <option value="$PROJECT_DIR$/buildSrc" />
           </set>
         </option>

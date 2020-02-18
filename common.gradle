@@ -1,0 +1,78 @@
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kotlinAndroidExtensions
+apply plugin: Plugins.kotlinKapt
+
+android {
+    compileSdkVersion Config.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion Config.minSdkVersion
+        targetSdkVersion Config.targetSdkVersion
+        versionCode Config.versionCode
+        versionName Config.versionName
+    }
+
+    flavorDimensions Dimensions.default
+    productFlavors {
+        prod {
+            versionCode Prod.versionCode
+            versionName Prod.versionName
+        }
+
+        dev {
+            versionCode Dev.versionCode
+            versionName Dev.versionName
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+        }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    lintOptions {
+        lintOptions {
+            abortOnError false
+            warningsAsErrors true
+            ignoreTestSources true
+            lintConfig file("lint.xml")
+            disable 'GradleDeprecated'
+            disable 'OldTargetApi'
+            disable 'GradleDependency'
+        }
+    }
+}
+
+dependencies {
+    implementation CoreLibraries.kotlin
+    kapt Libraries.dagger2Compiler
+    kapt Libraries.dagger2AndroidProcessor
+    testAnnotationProcessor Libraries.dagger2Compiler
+    compileOnly Libraries.javaxAnnotation
+
+    testImplementation TestLibraries.jUnit
+    androidTestImplementation TestLibraries.androidTestImplementation
+    androidTestImplementation TestLibraries.runnner
+    androidTestImplementation TestLibraries.espressoCore
+    androidTestImplementation TestLibraries.rules
+    testImplementation TestLibraries.mockitoCore
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'org.jetbrains.kotlin') {
+            details.useVersion Versions.kotlinVersion
+        }
+    }
+}
