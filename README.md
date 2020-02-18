@@ -28,7 +28,6 @@ The Presentation layer is responsible for presenting the data, animations, lists
 
 #### Patterns
 -   [Repository Pattern](https://developer.android.com/jetpack/docs/guide)
--   [Observer Pattern](https://code.tutsplus.com/tutorials/android-design-patterns-the-observer-pattern--cms-28963)
 
 #### Dependencies
 -   [AndroidX](https://developer.android.com/jetpack/androidx)
