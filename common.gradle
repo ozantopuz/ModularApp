@@ -51,10 +51,13 @@ android {
             disable 'GradleDependency'
         }
     }
+
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
-    implementation CoreLibraries.kotlin
     kapt Libraries.dagger2Compiler
     kapt Libraries.dagger2AndroidProcessor
     testAnnotationProcessor Libraries.dagger2Compiler

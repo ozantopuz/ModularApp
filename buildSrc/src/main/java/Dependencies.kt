@@ -1,18 +1,16 @@
 /*
- * Core Libraries
- */
-object CoreLibraries {
-    const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlinVersion}"
-}
-
-/*
  * Support Libraries
  */
 object SupportLibraries {
-    const val appCompat = "androidx.appcompat:appcompat:${Versions.xVersion}"
+    const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtxVersion}"
+    const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompatVersion}"
     const val constraintLayout = "com.android.support.constraint:constraint-layout:${Versions.constraintLayoutVersion}"
     const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.xVersion}"
     const val materialDesign = "com.google.android.material:material:${Versions.xVersion}"
+    const val livedataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleVersion}"
+    const val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
+    const val runtimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleVersion}"
+    const val lifecycleCommon = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycleVersion}"
 }
 
 /*

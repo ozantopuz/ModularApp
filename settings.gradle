@@ -1,3 +1,3 @@
-include Modules.app
-include Modules.core, Modules.corePresentation, Modules.coreData, Modules.coreDomain, Modules.coreNavigation
-include Modules.gameData, Modules.gameDomain, Modules.gamePresentation
+include ':app'
+include ':base:core', ':base:core_presentation', ':base:core_data', ':base:core_domain', ':base:core_navigation'
+include ':game:game_data', ':game:game_domain', ':game:game_presentation'

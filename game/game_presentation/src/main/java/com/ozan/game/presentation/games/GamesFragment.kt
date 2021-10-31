@@ -8,23 +8,24 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ozan.core.model.DataHolder
 import com.ozan.core.navigation.controller.DefaultNavigationController
 import com.ozan.core.presentation.base.BaseFragment
+import com.ozan.core.presentation.delegate.viewBinding
 import com.ozan.core.presentation.extensions.setup
 import com.ozan.core.presentation.recyclerview.DisplayItem
 import com.ozan.core.presentation.recyclerview.RecyclerViewAdapter
 import com.ozan.game.presentation.R
-import kotlinx.android.synthetic.main.fragment_games.*
+import com.ozan.game.presentation.databinding.FragmentGamesBinding
 import java.lang.ref.WeakReference
 import javax.inject.Inject
 
 class GamesFragment : BaseFragment<GamesViewModel>() {
 
+    private val binding: FragmentGamesBinding by viewBinding()
     private lateinit var navigationController: DefaultNavigationController
 
     @Inject
     protected lateinit var gamesAdapter: RecyclerViewAdapter
 
-    override fun getLayoutRes(): Int =
-        R.layout.fragment_games
+    override fun getLayoutRes(): Int = R.layout.fragment_games
 
     override fun getModelClass() = GamesViewModel::class.java
 
@@ -47,14 +48,14 @@ class GamesFragment : BaseFragment<GamesViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.navigationController = DefaultNavigationController(WeakReference(activity!!))
+        this.navigationController = DefaultNavigationController(WeakReference(activity))
     }
 
     override fun initView() {
         super.initView()
 
-        recyclerView.apply {
-            setup(context = context!!, adapter = gamesAdapter)
+        binding.recyclerView.apply {
+            setup(context = context, adapter = gamesAdapter)
             addOnScrollListener(recyclerViewOnScrollListener)
         }
 
@@ -66,13 +67,14 @@ class GamesFragment : BaseFragment<GamesViewModel>() {
         }
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel.gamesLiveData.observe(this, Observer {
-            swipeToRefreshLayout.isRefreshing = it is DataHolder.Loading
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.gamesLiveData.observe(viewLifecycleOwner, {
+            binding.swipeToRefreshLayout.isRefreshing = it is DataHolder.Loading
             when (it) {
                 is DataHolder.Success -> gamesAdapter.addItems(it.data)
                 is DataHolder.Fail -> onError(it.e)
+                else -> return@observe
             }
         })
 

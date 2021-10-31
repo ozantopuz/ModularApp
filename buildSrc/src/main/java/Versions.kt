@@ -12,9 +12,12 @@ object Versions {
     /*
      * Dependency Versions
      */
+    const val coreKtxVersion = "1.6.0"
+    const val appCompatVersion = "1.3.1"
     const val xVersion = "1.0.0"
-    const val gradleVersion = "3.5.2"
-    const val kotlinVersion = "1.3.31"
+    const val lifecycleVersion = "2.3.1"
+    const val gradleVersion = "7.0.3"
+    const val kotlinVersion = "1.5.31"
     const val jUnitVersion = "4.12"
     const val testRunnerVersion = "1.1.1"
     const val testImplementationVersion = "1.1.1"

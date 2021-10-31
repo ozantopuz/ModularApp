@@ -29,7 +29,7 @@ abstract class BaseFragment<VM : ViewModel> : Fragment(), BaseView {
 
     abstract fun getModelClass(): Class<VM>
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         if (activity is HasSupportFragmentInjector) {
             AndroidSupportInjection.inject(this)
         }
