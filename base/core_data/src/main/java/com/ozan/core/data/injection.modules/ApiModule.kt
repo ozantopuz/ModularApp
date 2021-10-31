@@ -1,6 +1,6 @@
 package com.ozan.core.data.injection.modules
 
-import com.ozan.core.BuildConfig
+import com.ozan.core.data.BuildConfig
 import com.ozan.core.data.api.ApiConstants
 import com.ozan.core.data.api.DefaultRequestInterceptor
 import dagger.Module
@@ -21,7 +21,7 @@ class ApiModule {
     @Provides
     @Singleton
     @Named(NAME_URL)
-    fun provideBaseUrl(): String = "https://api.rawg.io/api/"
+    fun provideBaseUrl(): String = BuildConfig.BASE_URL
 
     @Provides
     @Singleton
@@ -57,6 +57,6 @@ class ApiModule {
         }
 
     companion object {
-        private const val NAME_URL = "url"
+        private const val NAME_URL = "BASE_URL"
     }
 }

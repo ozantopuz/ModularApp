@@ -9,6 +9,8 @@ object Config {
     const val testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     const val versionCode = 1
     const val versionName = "1.0.0"
+    const val baseUrl = "https://api.rawg.io/api/"
+    const val apiKey = "4dfe2a4b8bb644f1bc2033ffedb35d61"
 }
 
 /*
@@ -17,6 +19,8 @@ object Config {
 object Fields {
     const val rootUrl = "ROOT_URL"
     const val pName = "PACKAGE_NAME"
+    const val baseUrl = "BASE_URL"
+    const val apiKey = "API_KEY"
 }
 
 /*
@@ -33,6 +37,8 @@ object Prod {
     const val versionCode = Config.versionCode
     const val versionName = Config.versionName
     const val packageName = Config.applicationId
+    const val baseUrl = Config.baseUrl
+    const val apiKey = Config.apiKey
 }
 
 object Dev {
@@ -42,4 +48,6 @@ object Dev {
     const val versionNameSuffix = suffix
     const val applicationIdSuffix = suffix
     const val packageName = Config.applicationId + applicationIdSuffix
+    const val baseUrl = Config.baseUrl
+    const val apiKey = Config.apiKey
 }
