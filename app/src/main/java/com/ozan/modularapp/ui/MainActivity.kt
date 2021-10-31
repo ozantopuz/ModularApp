@@ -6,8 +6,10 @@ import com.ozan.core.navigation.controller.NavigationController
 import com.ozan.core.presentation.base.BaseActivity
 import com.ozan.core.presentation.navigation.UiNavigation
 import com.ozan.modularapp.R
+import dagger.hilt.android.AndroidEntryPoint
 import java.lang.ref.WeakReference
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
     private lateinit var navigationController: NavigationController

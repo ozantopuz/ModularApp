@@ -5,8 +5,10 @@ import com.ozan.core.navigation.controller.DefaultNavigationController
 import com.ozan.core.presentation.base.BaseActivity
 import com.ozan.core.presentation.navigation.UiNavigation
 import com.ozan.game.presentation.gamedetail.GameDetailFragment
+import dagger.hilt.android.AndroidEntryPoint
 import java.lang.ref.WeakReference
 
+@AndroidEntryPoint
 class GamesActivity : BaseActivity() {
 
     private lateinit var navigationController: DefaultNavigationController

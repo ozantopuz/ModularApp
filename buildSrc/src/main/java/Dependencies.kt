@@ -30,9 +30,10 @@ object TestLibraries {
  * Common Libraries
  */
 object Libraries {
-    const val dagger2AndroidSupport = "com.google.dagger:dagger-android-support:${Versions.dagger2Version}"
-    const val dagger2Compiler = "com.google.dagger:dagger-compiler:${Versions.dagger2Version}"
-    const val dagger2AndroidProcessor = "com.google.dagger:dagger-android-processor:${Versions.dagger2Version}"
+    const val daggerHilt = "com.google.dagger:hilt-android:${Versions.daggerHiltVersion}"
+    const val daggerHiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.daggerHiltVersion}"
+    const val androidHiltViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.androidHiltVersion}"
+    const val androidHiltCompiler = "androidx.hilt:hilt-compiler:${Versions.androidHiltVersion}"
     const val javaxAnnotation = "org.glassfish:javax.annotation:${Versions.javaxAnnotationVersion}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}"
     const val logInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpLoggingInterceptorVersion}"

@@ -9,10 +9,12 @@ import com.ozan.core.presentation.base.BaseViewModel
 import com.ozan.core.presentation.recyclerview.DisplayItem
 import com.ozan.game.domain.GameDetail
 import com.ozan.game.domain.GameDetailInteractor.Params
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
+@HiltViewModel
 class GameDetailViewModel @Inject constructor(
     private val interactor: Interactor.ReactiveRetrieveInteractor<Params, GameDetail>,
     private val mapper: Function<GameDetail, DisplayItem>,

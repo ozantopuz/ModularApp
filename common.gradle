@@ -1,6 +1,7 @@
 apply plugin: Plugins.kotlinAndroid
 apply plugin: Plugins.kotlinAndroidExtensions
 apply plugin: Plugins.kotlinKapt
+apply plugin: Plugins.daggerHilt
 
 android {
     compileSdkVersion Config.compileSdkVersion
@@ -58,9 +59,10 @@ android {
 }
 
 dependencies {
-    kapt Libraries.dagger2Compiler
-    kapt Libraries.dagger2AndroidProcessor
-    testAnnotationProcessor Libraries.dagger2Compiler
+    api Libraries.daggerHilt
+    kapt Libraries.daggerHiltCompiler
+    api Libraries.androidHiltViewModel
+    kapt Libraries.androidHiltCompiler
     compileOnly Libraries.javaxAnnotation
 
     testImplementation TestLibraries.jUnit

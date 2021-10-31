@@ -4,13 +4,14 @@ buildscript {
 
     repositories {
         google()
-        jcenter()
+        mavenCentral()
         maven { url 'https://jitpack.io' }
 
     }
     dependencies {
         classpath Paths.gradleClasspath
         classpath Paths.kotlinGradlePluginClasspath
+        classpath Paths.daggerHiltPluginVersionClasspath
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -20,7 +21,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
         maven { url 'https://jitpack.io' }
 
     }

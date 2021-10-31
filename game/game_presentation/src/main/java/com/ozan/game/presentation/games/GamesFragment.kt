@@ -3,6 +3,7 @@ package com.ozan.game.presentation.games
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ozan.core.model.DataHolder
@@ -14,20 +15,23 @@ import com.ozan.core.presentation.recyclerview.DisplayItem
 import com.ozan.core.presentation.recyclerview.RecyclerViewAdapter
 import com.ozan.game.presentation.R
 import com.ozan.game.presentation.databinding.FragmentGamesBinding
+import dagger.hilt.android.AndroidEntryPoint
 import java.lang.ref.WeakReference
 import javax.inject.Inject
 
-class GamesFragment : BaseFragment<GamesViewModel>() {
+@AndroidEntryPoint
+class GamesFragment : BaseFragment() {
 
     private val binding: FragmentGamesBinding by viewBinding()
+    private val viewModel: GamesViewModel by lazy {
+        ViewModelProvider(this).get(GamesViewModel::class.java)
+    }
     private lateinit var navigationController: DefaultNavigationController
 
     @Inject
     protected lateinit var gamesAdapter: RecyclerViewAdapter
 
     override fun getLayoutRes(): Int = R.layout.fragment_games
-
-    override fun getModelClass() = GamesViewModel::class.java
 
     private val recyclerViewOnScrollListener = object : RecyclerView.OnScrollListener() {
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {

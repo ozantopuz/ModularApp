@@ -3,8 +3,11 @@ package com.ozan.game.domain
 import com.ozan.core.domain.Interactor
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
 @Module
+@InstallIn(SingletonComponent::class)
 class GameDomainModule {
 
     @Provides
