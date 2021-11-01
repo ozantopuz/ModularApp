@@ -1,16 +1,16 @@
-apply plugin: Plugins.androidApplication
+apply plugin: Plugins.ANDROID_APPLICATION
 apply from: "$rootDir/common.gradle"
 
 android {
-    flavorDimensions Dimensions.default
+    flavorDimensions Dimensions.DEFAULT
     productFlavors {
         prod {
             // empty
         }
 
         dev {
-            applicationIdSuffix Dev.applicationIdSuffix
-            versionNameSuffix Dev.versionNameSuffix
+            applicationIdSuffix Dev.APPLICATION_ID_SUFFIX
+            versionNameSuffix Dev.VERSION_NAME_SUFFIX
         }
     }
 
@@ -22,17 +22,17 @@ android {
 dependencies {
 
     // Core
-    implementation project(Modules.core)
-    implementation project(Modules.coreData)
-    implementation project(Modules.coreDomain)
-    implementation project(Modules.corePresentation)
-    implementation project(Modules.coreNavigation)
+    implementation project(Modules.CORE)
+    implementation project(Modules.CORE_DATA)
+    implementation project(Modules.CORE_DOMAIN)
+    implementation project(Modules.CORE_PRESENTATION)
+    implementation project(Modules.CORE_NAVIGATION)
 
     // Game
-    implementation project(Modules.gameData)
-    implementation project(Modules.gameDomain)
-    implementation project(Modules.gamePresentation)
+    implementation project(Modules.GAME_DATA)
+    implementation project(Modules.GAME_DOMAIN)
+    implementation project(Modules.GAME_PRESENTATION)
 
     // Support Libraries
-    implementation SupportLibraries.appCompat
+    implementation SupportLibraries.APP_COMPAT
 }

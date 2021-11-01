@@ -9,9 +9,9 @@ buildscript {
 
     }
     dependencies {
-        classpath Paths.gradleClasspath
-        classpath Paths.kotlinGradlePluginClasspath
-        classpath Paths.daggerHiltPluginVersionClasspath
+        classpath Paths.GRADLE_CLASSPATH
+        classpath Paths.KOTLIN_GRADLE_PLUGIN_CLASSPATH
+        classpath Paths.DAGGER_HILT_PLUGIN_CLASSPATH
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

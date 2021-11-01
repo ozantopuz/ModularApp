@@ -2,48 +2,45 @@
  * Support Libraries
  */
 object SupportLibraries {
-    const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtxVersion}"
-    const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompatVersion}"
-    const val constraintLayout = "com.android.support.constraint:constraint-layout:${Versions.constraintLayoutVersion}"
-    const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.xVersion}"
-    const val materialDesign = "com.google.android.material:material:${Versions.xVersion}"
-    const val livedataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleVersion}"
-    const val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
-    const val runtimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleVersion}"
-    const val lifecycleCommon = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycleVersion}"
+    const val CORE_KTX = "androidx.core:core-ktx:${Versions.CORE_KTX_VERSION}"
+    const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.APP_COMPAT_VERSION}"
+    const val CONSTRAINT_LAYOUT = "com.android.support.constraint:constraint-layout:${Versions.CONSTRAINT_LAYOUT_VERSION}"
+    const val RECYCLER_VIEW = "androidx.recyclerview:recyclerview:${Versions.X_VERSION}"
+    const val MATERIAL_DESIGN = "com.google.android.material:material:${Versions.X_VERSION}"
+    const val LIVE_DATA_KTX = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE_VERSION}"
+    const val VIEW_MODEL_KTX = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE_VERSION}"
+    const val RUNTIME_KTX = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE_VERSION}"
+    const val LIFECYCLE_COMMON = "androidx.lifecycle:lifecycle-common-java8:${Versions.LIFECYCLE_VERSION}"
 }
 
 /*
  * Test Libraries
  */
 object TestLibraries {
-    const val jUnit = "junit:junit:${Versions.jUnitVersion}"
-    const val androidTestImplementation = "androidx.test.ext:junit:${Versions.testImplementationVersion}"
-    const val runnner = "androidx.test:runner:${Versions.testRunnerVersion}"
-    const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
-    const val mockitoCore = "org.mockito:mockito-core:${Versions.mockitoVersion}"
-    const val mockitoAndroid = "org.mockito:mockito-android:${Versions.mockitoVersion}"
-    const val rules = "com.android.support.test:rules:${Versions.rules}"
+    const val J_UNIT = "junit:junit:${Versions.J_UNIT_VERSION}"
+    const val ANDROID_TEST_IMPLEMENTATION = "androidx.test.ext:junit:${Versions.TEST_IMPLEMENTATION_VERSION}"
+    const val RUNNER = "androidx.test:runner:${Versions.TEST_RUNNER_VERSION}"
+    const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO_CORE_VERSION}"
+    const val MOCKITO_CORE = "org.mockito:mockito-core:${Versions.MOCKITO_VERSION}"
+    const val MOCKITO_ANDROID = "org.mockito:mockito-android:${Versions.MOCKITO_VERSION}"
+    const val RULES = "com.android.support.test:rules:${Versions.RULES_VERSION}"
 }
 
 /*
  * Common Libraries
  */
 object Libraries {
-    const val daggerHilt = "com.google.dagger:hilt-android:${Versions.daggerHiltVersion}"
-    const val daggerHiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.daggerHiltVersion}"
-    const val androidHiltViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.androidHiltVersion}"
-    const val androidHiltCompiler = "androidx.hilt:hilt-compiler:${Versions.androidHiltVersion}"
-    const val javaxAnnotation = "org.glassfish:javax.annotation:${Versions.javaxAnnotationVersion}"
-    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}"
-    const val logInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpLoggingInterceptorVersion}"
-    const val gson = "com.squareup.retrofit2:converter-gson:${Versions.gsonVersion}"
-    const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttpVersion}"
-    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel:${Versions.viewModelVersion}"
-    const val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.viewModelVersion}"
-    const val rxKotlin = "io.reactivex.rxjava2:rxkotlin:${Versions.rxKotlinVersion}"
-    const val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroidVersion}"
-    const val retrofitRxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofitVersion}"
-    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
-
+    const val DAGGER_HILT = "com.google.dagger:hilt-android:${Versions.DAGGER_HILT_VERSION}"
+    const val DAGGER_HILT_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.DAGGER_HILT_VERSION}"
+    const val JAVAX_ANNOTATION = "org.glassfish:javax.annotation:${Versions.JAVAX_ANNOTATION_VERSION}"
+    const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT_VERSION}"
+    const val OKHTTP_LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_LOGGING_INTERCEPTOR_VERSION}"
+    const val GSON = "com.squareup.retrofit2:converter-gson:${Versions.GSON_VERSION}"
+    const val OKHTTP = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP_VERSION}"
+    const val VIEW_MODEL = "androidx.lifecycle:lifecycle-viewmodel:${Versions.VIEW_MODEL_VERSION}"
+    const val LIFECYCLE_EXTENSIONS = "androidx.lifecycle:lifecycle-extensions:${Versions.VIEW_MODEL_VERSION}"
+    const val RX_KOTLIN = "io.reactivex.rxjava2:rxkotlin:${Versions.RX_KOTLIN_VERSION}"
+    const val RX_ANDROID = "io.reactivex.rxjava2:rxandroid:${Versions.RX_ANDROID_VERSION}"
+    const val RETROFIT_RX_ADAPTER = "com.squareup.retrofit2:adapter-rxjava2:${Versions.RETROFIT_VERSION}"
+    const val GLIDE = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
 }

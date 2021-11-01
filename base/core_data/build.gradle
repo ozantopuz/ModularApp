@@ -1,27 +1,27 @@
 apply from: "$rootDir/common-android-library.gradle"
 
 android {
-    flavorDimensions Dimensions.default
+    flavorDimensions Dimensions.DEFAULT
     productFlavors {
         prod {
-            buildConfigField("String", Fields.baseUrl, "\"$Prod.baseUrl\"")
-            buildConfigField("String", Fields.apiKey, "\"$Prod.apiKey\"")
+            buildConfigField("String", Fields.BASE_URL, "\"$Prod.BASE_URL\"")
+            buildConfigField("String", Fields.API_KEY, "\"$Prod.API_KEY\"")
         }
 
         dev {
-            buildConfigField("String", Fields.baseUrl, "\"$Dev.baseUrl\"")
-            buildConfigField("String", Fields.apiKey, "\"$Dev.apiKey\"")
+            buildConfigField("String", Fields.BASE_URL, "\"$Dev.BASE_URL\"")
+            buildConfigField("String", Fields.API_KEY, "\"$Dev.API_KEY\"")
         }
     }
 }
 
 dependencies {
 
-    implementation project(Modules.core)
+    implementation project(Modules.CORE)
 
     // RETROFIT
-    api Libraries.retrofit
-    api Libraries.logInterceptor
-    api Libraries.okHttp
-    api Libraries.retrofitRxAdapter
+    api Libraries.RETROFIT
+    api Libraries.OKHTTP_LOGGING_INTERCEPTOR
+    api Libraries.OKHTTP
+    api Libraries.RETROFIT_RX_ADAPTER
 }

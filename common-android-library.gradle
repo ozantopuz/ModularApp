@@ -1,2 +1,2 @@
-apply plugin: Plugins.androidLibrary
+apply plugin: Plugins.ANDROID_LIBRARY
 apply from: "$rootDir/common.gradle"

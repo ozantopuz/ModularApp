@@ -1,17 +1,17 @@
 apply from: "$rootDir/common-android-library.gradle"
 
 android {
-    flavorDimensions Dimensions.default
+    flavorDimensions Dimensions.DEFAULT
     productFlavors {
         prod {
-            buildConfigField("String", Fields.pName, "\"$Prod.packageName\"")
+            buildConfigField("String", Fields.PACKAGE_NAME, "\"$Prod.PACKAGE_NAME\"")
         }
 
         dev {
-            buildConfigField("String", Fields.pName, "\"$Dev.packageName\"")
+            buildConfigField("String", Fields.PACKAGE_NAME, "\"$Dev.PACKAGE_NAME\"")
         }
     }
 }
 dependencies {
-    api project(Modules.core)
+    api project(Modules.CORE)
 }

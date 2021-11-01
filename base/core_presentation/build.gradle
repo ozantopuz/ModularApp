@@ -2,19 +2,19 @@ apply from: "$rootDir/common-android-library.gradle"
 
 dependencies {
 
-    api project(Modules.core)
-    api project(Modules.coreNavigation)
+    api project(Modules.CORE)
+    api project(Modules.CORE_NAVIGATION)
 
     // View
-    api SupportLibraries.coreKtx
-    api SupportLibraries.appCompat
-    api SupportLibraries.constraintLayout
-    api SupportLibraries.recyclerView
-    api SupportLibraries.materialDesign
-    api SupportLibraries.livedataKtx
-    api SupportLibraries.viewModelKtx
-    api SupportLibraries.runtimeKtx
-    api SupportLibraries.lifecycleCommon
-    api Libraries.glide
-    api Libraries.lifecycleExtensions
+    api SupportLibraries.CORE_KTX
+    api SupportLibraries.APP_COMPAT
+    api SupportLibraries.CONSTRAINT_LAYOUT
+    api SupportLibraries.RECYCLER_VIEW
+    api SupportLibraries.MATERIAL_DESIGN
+    api SupportLibraries.LIVE_DATA_KTX
+    api SupportLibraries.VIEW_MODEL_KTX
+    api SupportLibraries.RUNTIME_KTX
+    api SupportLibraries.LIFECYCLE_COMMON
+    api Libraries.GLIDE
+    api Libraries.LIFECYCLE_EXTENSIONS
 }

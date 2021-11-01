@@ -1,28 +1,28 @@
-apply plugin: Plugins.kotlinAndroid
-apply plugin: Plugins.kotlinAndroidExtensions
-apply plugin: Plugins.kotlinKapt
-apply plugin: Plugins.daggerHilt
+apply plugin: Plugins.KOTLIN_ANDROID
+apply plugin: Plugins.KOTLIN_ANDROID_EXTENSIONS
+apply plugin: Plugins.KOTLIN_KAPT
+apply plugin: Plugins.DAGGER_HILT
 
 android {
-    compileSdkVersion Config.compileSdkVersion
+    compileSdkVersion Config.COMPILE_SDK_VERSION
 
     defaultConfig {
-        minSdkVersion Config.minSdkVersion
-        targetSdkVersion Config.targetSdkVersion
-        versionCode Config.versionCode
-        versionName Config.versionName
+        minSdkVersion Config.MIN_SDK_VERSION
+        targetSdkVersion Config.TARGET_SDK_VERSION
+        versionCode Config.VERSION_CODE
+        versionName Config.VERSION_NAME
     }
 
-    flavorDimensions Dimensions.default
+    flavorDimensions Dimensions.DEFAULT
     productFlavors {
         prod {
-            versionCode Prod.versionCode
-            versionName Prod.versionName
+            versionCode Prod.VERSION_CODE
+            versionName Prod.VERSION_NAME
         }
 
         dev {
-            versionCode Dev.versionCode
-            versionName Dev.versionName
+            versionCode Dev.VERSION_CODE
+            versionName Dev.VERSION_NAME
         }
     }
 
@@ -59,25 +59,23 @@ android {
 }
 
 dependencies {
-    api Libraries.daggerHilt
-    kapt Libraries.daggerHiltCompiler
-    api Libraries.androidHiltViewModel
-    kapt Libraries.androidHiltCompiler
-    compileOnly Libraries.javaxAnnotation
+    api Libraries.DAGGER_HILT
+    kapt Libraries.DAGGER_HILT_COMPILER
+    compileOnly Libraries.JAVAX_ANNOTATION
 
-    testImplementation TestLibraries.jUnit
-    androidTestImplementation TestLibraries.androidTestImplementation
-    androidTestImplementation TestLibraries.runnner
-    androidTestImplementation TestLibraries.espressoCore
-    androidTestImplementation TestLibraries.rules
-    testImplementation TestLibraries.mockitoCore
+    testImplementation TestLibraries.J_UNIT
+    androidTestImplementation TestLibraries.ANDROID_TEST_IMPLEMENTATION
+    androidTestImplementation TestLibraries.RUNNER
+    androidTestImplementation TestLibraries.ESPRESSO_CORE
+    androidTestImplementation TestLibraries.RULES
+    testImplementation TestLibraries.MOCKITO_CORE
 }
 
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
         def requested = details.requested
         if (requested.group == 'org.jetbrains.kotlin') {
-            details.useVersion Versions.kotlinVersion
+            details.useVersion Versions.KOTLIN_VERSION
         }
     }
 }

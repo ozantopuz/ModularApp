@@ -2,10 +2,10 @@
  * Plugins
  */
 object Plugins {
-    const val androidApplication = "com.android.application"
-    const val androidLibrary = "com.android.library"
-    const val kotlinAndroid = "kotlin-android"
-    const val kotlinAndroidExtensions = "kotlin-android-extensions"
-    const val kotlinKapt = "kotlin-kapt"
-    const val daggerHilt = "dagger.hilt.android.plugin"
+    const val ANDROID_APPLICATION = "com.android.application"
+    const val ANDROID_LIBRARY = "com.android.library"
+    const val KOTLIN_ANDROID = "kotlin-android"
+    const val KOTLIN_ANDROID_EXTENSIONS = "kotlin-android-extensions"
+    const val KOTLIN_KAPT = "kotlin-kapt"
+    const val DAGGER_HILT = "dagger.hilt.android.plugin"
 }

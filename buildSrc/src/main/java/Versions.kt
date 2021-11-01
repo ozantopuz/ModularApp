@@ -5,40 +5,39 @@ object Versions {
     /*
      * Sdk Versions
      */
-    const val minSdkVersion = 21
-    const val targetSdkVersion = 28
-    const val compileSdkVersion = 28
+    const val MIN_SDK_VERSION = 21
+    const val TARGET_SDK_VERSION = 28
+    const val COMPILE_SDK_VERSION = 28
 
     /*
      * Dependency Versions
      */
-    const val coreKtxVersion = "1.6.0"
-    const val appCompatVersion = "1.3.1"
-    const val xVersion = "1.0.0"
-    const val lifecycleVersion = "2.3.1"
-    const val gradleVersion = "7.0.3"
-    const val daggerHiltPluginVersion = "2.37"
-    const val kotlinVersion = "1.5.31"
-    const val jUnitVersion = "4.12"
-    const val testRunnerVersion = "1.1.1"
-    const val testImplementationVersion = "1.1.1"
-    const val espressoCoreVersion = "3.1.0"
-    const val daggerHiltVersion = "2.35"
-    const val androidHiltVersion = "1.0.0-alpha02"
-    const val javaxAnnotationVersion = "10.0-b28"
-    const val retrofitVersion = "2.5.0"
-    const val okHttpLoggingInterceptorVersion = "3.8.0"
-    const val gsonVersion = "2.0.2"
-    const val okHttpVersion = "3.10.0"
-    const val viewModelVersion = "2.0.0"
-    const val rxKotlinVersion = "2.3.0"
-    const val rxAndroidVersion = "2.1.1"
-    const val mockitoVersion = "2.18.3"
-    const val constraintLayoutVersion = "1.1.2"
-    const val archCore = "2.0.1"
-    const val rules = "1.0.2"
-    const val truthVersion = "1.0"
-    const val truthExtVersion = "1.3.0-alpha01"
-    const val mockKVersion = "1.9.3"
-    const val glide = "4.10.0"
+    const val CORE_KTX_VERSION = "1.6.0"
+    const val APP_COMPAT_VERSION = "1.3.1"
+    const val X_VERSION = "1.0.0"
+    const val LIFECYCLE_VERSION = "2.3.1"
+    const val GRADLE_VERSION = "7.0.3"
+    const val DAGGER_HILT_PLUGIN_VERSION = "2.37"
+    const val KOTLIN_VERSION = "1.5.31"
+    const val J_UNIT_VERSION = "4.12"
+    const val TEST_RUNNER_VERSION = "1.1.1"
+    const val TEST_IMPLEMENTATION_VERSION = "1.1.1"
+    const val ESPRESSO_CORE_VERSION = "3.1.0"
+    const val DAGGER_HILT_VERSION = "2.35"
+    const val JAVAX_ANNOTATION_VERSION = "10.0-b28"
+    const val RETROFIT_VERSION = "2.5.0"
+    const val OKHTTP_LOGGING_INTERCEPTOR_VERSION = "3.8.0"
+    const val GSON_VERSION = "2.0.2"
+    const val OKHTTP_VERSION = "3.10.0"
+    const val VIEW_MODEL_VERSION = "2.0.0"
+    const val RX_KOTLIN_VERSION = "2.3.0"
+    const val RX_ANDROID_VERSION = "2.1.1"
+    const val MOCKITO_VERSION = "2.18.3"
+    const val CONSTRAINT_LAYOUT_VERSION = "1.1.2"
+    const val ARCH_CORE_VERSION = "2.0.1"
+    const val RULES_VERSION = "1.0.2"
+    const val TRUTH_VERSION = "1.0"
+    const val TRUTH_EXT_VERSION = "1.3.0-alpha01"
+    const val MOCKK_VERSION = "1.9.3"
+    const val GLIDE = "4.10.0"
 }
