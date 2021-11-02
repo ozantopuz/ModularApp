@@ -19,11 +19,11 @@ object SupportLibraries {
 object TestLibraries {
     const val J_UNIT = "junit:junit:${Versions.J_UNIT_VERSION}"
     const val ANDROID_TEST_IMPLEMENTATION = "androidx.test.ext:junit:${Versions.TEST_IMPLEMENTATION_VERSION}"
-    const val RUNNER = "androidx.test:runner:${Versions.TEST_RUNNER_VERSION}"
     const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO_CORE_VERSION}"
-    const val MOCKITO_CORE = "org.mockito:mockito-core:${Versions.MOCKITO_VERSION}"
-    const val MOCKITO_ANDROID = "org.mockito:mockito-android:${Versions.MOCKITO_VERSION}"
-    const val RULES = "com.android.support.test:rules:${Versions.RULES_VERSION}"
+    const val COROUTINES_TEST = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.KOTLIN_COROUTINES_TEST_VERSION}"
+    const val MOCKK = "io.mockk:mockk:${Versions.MOCKK_VERSION}"
+    const val TRUTH = "androidx.test.ext:truth:${Versions.TRUTH_VERSION}"
+    const val ARCH_CORE = "androidx.arch.core:core-testing:${Versions.ARCH_CORE_VERSION}"
 }
 
 /*

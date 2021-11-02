@@ -8,7 +8,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface GameServices {
+interface GameService {
 
     @GET("games")
     suspend fun fetchGames(

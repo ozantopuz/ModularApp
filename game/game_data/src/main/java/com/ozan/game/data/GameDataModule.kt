@@ -17,18 +17,23 @@ class GameDataModule {
 
     @Provides
     @Singleton
-    fun provideGameServices(retrofit: Retrofit): GameServices =
-        retrofit.create(GameServices::class.java)
+    fun provideGameService(retrofit: Retrofit): GameService =
+        retrofit.create(GameService::class.java)
+
+    @Provides
+    fun provideGamesResponseMapper(): GamesResponseMapper = GamesResponseMapper()
 
     @Provides
     @Singleton
-    fun provideGamesRemoteDataSource(gameServices: GameServices): DataSource.RetrieveRemoteDataSource<Int, GamesResponse> =
-        GamesRemoteDataSource(gameServices)
+    fun provideGamesRemoteDataSource(
+        gameService: GameService,
+        mapper: GamesResponseMapper
+    ): DataSource.RetrieveRemoteDataSource<Int, GamesResponse> = GamesRemoteDataSource(gameService, mapper)
 
     @Provides
     @Singleton
-    fun provideGameDetailRemoteDataSource(gameServices: GameServices): DataSource.RetrieveRemoteDataSource<Int, GameDetail> =
-        GameDetailRemoteDataSource(gameServices)
+    fun provideGameDetailRemoteDataSource(gameService: GameService): DataSource.RetrieveRemoteDataSource<Int, GameDetail> =
+        GameDetailRemoteDataSource(gameService)
 
     @Provides
     @Singleton

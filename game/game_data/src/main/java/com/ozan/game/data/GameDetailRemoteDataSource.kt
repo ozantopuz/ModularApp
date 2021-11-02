@@ -6,11 +6,11 @@ import com.ozan.game.domain.GameDetail
 import javax.inject.Inject
 
 class GameDetailRemoteDataSource @Inject constructor(
-    private val gameServices: GameServices
+    private val gameService: GameService
 ) : DataSource.RetrieveRemoteDataSource<Int, GameDetail> {
 
     override suspend fun getResult(request: Int): DataHolder<GameDetail> {
-        val response = gameServices.fetchGameDetail(request)
+        val response = gameService.fetchGameDetail(request)
         return DataHolder.Success(response)
     }
 }

@@ -56,6 +56,10 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    packagingOptions {
+        exclude 'META-INF/*'
+    }
 }
 
 dependencies {
@@ -65,10 +69,12 @@ dependencies {
 
     testImplementation TestLibraries.J_UNIT
     androidTestImplementation TestLibraries.ANDROID_TEST_IMPLEMENTATION
-    androidTestImplementation TestLibraries.RUNNER
     androidTestImplementation TestLibraries.ESPRESSO_CORE
-    androidTestImplementation TestLibraries.RULES
-    testImplementation TestLibraries.MOCKITO_CORE
+    api TestLibraries.COROUTINES_TEST
+    testImplementation TestLibraries.MOCKK
+    testImplementation TestLibraries.TRUTH
+    testImplementation TestLibraries.ARCH_CORE
+    androidTestImplementation TestLibraries.TRUTH
 }
 
 configurations.all {
