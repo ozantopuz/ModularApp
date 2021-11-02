@@ -2,7 +2,7 @@
     package="com.ozan.game.presentation">
 
     <application>
-        <activity android:name="com.ozan.game.presentation.GamesActivity"/>
+        <activity android:name="com.ozan.game.presentation.GamesActivity" />
     </application>
 
 </manifest>

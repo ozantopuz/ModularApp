@@ -23,7 +23,7 @@ object Modules {
     /*
      * Game
      */
-     const val GAME_DATA = "$GAME_DIRECTORY:game_data"
-     const val GAME_DOMAIN = "$GAME_DIRECTORY:game_domain"
-     const val GAME_PRESENTATION = "$GAME_DIRECTORY:game_presentation"
+    const val GAME_DATA = "$GAME_DIRECTORY:game_data"
+    const val GAME_DOMAIN = "$GAME_DIRECTORY:game_domain"
+    const val GAME_PRESENTATION = "$GAME_DIRECTORY:game_presentation"
 }

@@ -1,9 +1,6 @@
 package com.ozan.game.presentation
 
-import com.ozan.core.mapper.Mapper
 import com.ozan.core.presentation.recyclerview.*
-import com.ozan.game.domain.Game
-import com.ozan.game.domain.GameDetail
 import com.ozan.game.presentation.GamePresentationConstants.TYPES.GAME
 import com.ozan.game.presentation.gamedetail.GameDetailViewEntityMapper
 import com.ozan.game.presentation.games.GameViewEntityMapper
@@ -36,7 +33,8 @@ abstract class GamePresentationModule {
         fun provideGameViewEntityMapper(): GameViewEntityMapper = GameViewEntityMapper()
 
         @Provides
-        fun provideGameDetailViewEntityMapper(): GameDetailViewEntityMapper = GameDetailViewEntityMapper()
+        fun provideGameDetailViewEntityMapper(): GameDetailViewEntityMapper =
+            GameDetailViewEntityMapper()
 
         @Provides
         fun provideDisplayItemComparator(): DisplayItemComparator = DefaultDisplayItemComparator()

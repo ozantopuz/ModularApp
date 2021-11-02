@@ -28,7 +28,8 @@ class GameDataModule {
     fun provideGamesRemoteDataSource(
         gameService: GameService,
         mapper: GamesResponseMapper
-    ): DataSource.RetrieveRemoteDataSource<Int, GamesResponse> = GamesRemoteDataSource(gameService, mapper)
+    ): DataSource.RetrieveRemoteDataSource<Int, GamesResponse> =
+        GamesRemoteDataSource(gameService, mapper)
 
     @Provides
     @Singleton

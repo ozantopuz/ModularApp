@@ -5,12 +5,11 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.ozan.core.domain.UseCase
-import com.ozan.core.error.ErrorFactory
 import com.ozan.core.model.DataHolder
 import com.ozan.core.presentation.base.BaseViewModel
 import com.ozan.core.presentation.recyclerview.DisplayItem
-import com.ozan.game.domain.GamesUseCase.Params
 import com.ozan.game.domain.GamesResponse
+import com.ozan.game.domain.GamesUseCase.Params
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -19,8 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class GamesViewModel @Inject constructor(
     private val useCaseFlow: UseCase.FlowRetrieveUseCase<Params, GamesResponse>,
-    private val mapper: GameViewEntityMapper,
-    private val errorFactory: ErrorFactory
+    private val mapper: GameViewEntityMapper
 ) : BaseViewModel() {
 
     private val _gamesLiveData = MediatorLiveData<DataHolder<List<DisplayItem>>>()
@@ -57,13 +55,14 @@ class GamesViewModel @Inject constructor(
 
         viewModelScope.launch {
             useCaseFlow.execute(params).collect { dataHolder ->
-                when(dataHolder) {
+                when (dataHolder) {
                     is DataHolder.Fail -> _gamesLiveData.postValue(DataHolder.Fail(dataHolder.e))
                     is DataHolder.Success -> {
                         this@GamesViewModel.page.currentPage++
                         count = dataHolder.data.count!!
 
-                        val displayItems = dataHolder.data.results?.map { mapper.apply(it) } ?: arrayListOf()
+                        val displayItems =
+                            dataHolder.data.results?.map { mapper.apply(it) } ?: arrayListOf()
                         _gamesLiveData.postValue(DataHolder.Success(displayItems))
                         games.addAll(displayItems)
                     }

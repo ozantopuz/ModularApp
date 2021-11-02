@@ -11,7 +11,8 @@ class DefaultRequestInterceptor @Inject constructor() : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         var request: Request = chain.request()
-        val url: HttpUrl = request.url().newBuilder().addQueryParameter(KEY, BuildConfig.API_KEY).build()
+        val url: HttpUrl =
+            request.url().newBuilder().addQueryParameter(KEY, BuildConfig.API_KEY).build()
         request = request.newBuilder().addHeader(CONTENT_TYPE, JSON).url(url).build()
         return chain.proceed(request)
     }

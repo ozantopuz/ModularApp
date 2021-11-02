@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.viewModelScope
 import com.ozan.core.domain.UseCase
-import com.ozan.core.error.ErrorFactory
 import com.ozan.core.model.DataHolder
 import com.ozan.core.presentation.base.BaseViewModel
 import com.ozan.core.presentation.recyclerview.DisplayItem
@@ -18,8 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class GameDetailViewModel @Inject constructor(
     private val useCase: UseCase.FlowRetrieveUseCase<Params, GameDetail>,
-    private val mapper: GameDetailViewEntityMapper,
-    private val errorFactory: ErrorFactory
+    private val mapper: GameDetailViewEntityMapper
 ) : BaseViewModel() {
 
     private val _gameDetailLiveData = MediatorLiveData<DataHolder<DisplayItem>>()
@@ -33,7 +31,7 @@ class GameDetailViewModel @Inject constructor(
 
         viewModelScope.launch {
             useCase.execute(params).collect { dataHolder ->
-                when(dataHolder) {
+                when (dataHolder) {
                     is DataHolder.Fail ->
                         _gameDetailLiveData.postValue(DataHolder.Fail(dataHolder.e))
                     is DataHolder.Success ->

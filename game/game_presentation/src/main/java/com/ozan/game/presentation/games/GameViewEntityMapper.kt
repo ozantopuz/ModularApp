@@ -6,7 +6,7 @@ import com.ozan.game.domain.Game
 
 class GameViewEntityMapper : Mapper<Game, DisplayItem> {
 
-    override suspend fun apply(item : Game): DisplayItem{
+    override suspend fun apply(item: Game): DisplayItem {
         return GameViewEntity(
             id = item.id,
             name = item.name,

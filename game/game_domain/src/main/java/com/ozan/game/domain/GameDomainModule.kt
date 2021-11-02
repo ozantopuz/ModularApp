@@ -13,7 +13,7 @@ class GameDomainModule {
     @Provides
     fun provideGamesUseCase(gameRepository: GameRepository):
             UseCase.FlowRetrieveUseCase<GamesUseCase.Params, GamesResponse> =
-      GamesUseCase(gameRepository)
+        GamesUseCase(gameRepository)
 
     @Provides
     fun provideGameUseCase(gameRepository: GameRepository):

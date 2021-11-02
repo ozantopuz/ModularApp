@@ -2,7 +2,6 @@ package com.ozan.game.presentation.games
 
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -43,7 +42,8 @@ class GamesFragment : BaseFragment() {
 
             if (viewModel.gamesLiveData.value !is DataHolder.Loading) {
                 if (visibleItemCount + firstVisibleItemPosition >= totalItemCount - 5
-                    && firstVisibleItemPosition >= 0) {
+                    && firstVisibleItemPosition >= 0
+                ) {
                     viewModel.getGamesByPagination()
                 }
             }

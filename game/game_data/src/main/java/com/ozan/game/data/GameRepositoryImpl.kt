@@ -1,7 +1,6 @@
 package com.ozan.game.data
 
 import com.ozan.core.data.source.DataSource
-import com.ozan.core.error.DefaultErrorFactory
 import com.ozan.core.model.DataHolder
 import com.ozan.game.domain.GameDetail
 import com.ozan.game.domain.GameRepository
@@ -14,7 +13,7 @@ class GameRepositoryImpl @Inject constructor(
 ) : GameRepository {
 
     override suspend fun fetchGames(page: Int): DataHolder<GamesResponse> =
-         gamesRemoteDataSource.getResult(page)
+        gamesRemoteDataSource.getResult(page)
 
     override suspend fun fetchGameDetail(id: Int): DataHolder<GameDetail> =
         gameDetailRemoteDataSource.getResult(id)

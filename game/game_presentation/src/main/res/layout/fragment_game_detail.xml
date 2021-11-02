@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="false"
     android:background="@color/grey"
+    android:fitsSystemWindows="false"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -21,7 +21,7 @@
             app:expandedTitleTextAppearance="@android:color/transparent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -69,8 +69,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:gravity="center"
+                    android:orientation="horizontal"
                     android:padding="@dimen/small_100">
 
                     <TextView
@@ -95,8 +95,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:gravity="center"
+                    android:orientation="horizontal"
                     android:padding="@dimen/small_100">
 
                     <TextView
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/small_100"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/text_size_medium"/>
+                android:textSize="@dimen/text_size_medium" />
 
         </LinearLayout>
 
