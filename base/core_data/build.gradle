@@ -23,5 +23,4 @@ dependencies {
     api Libraries.RETROFIT
     api Libraries.OKHTTP_LOGGING_INTERCEPTOR
     api Libraries.OKHTTP
-    api Libraries.RETROFIT_RX_ADAPTER
 }

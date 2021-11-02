@@ -3,24 +3,23 @@ package com.ozan.game.presentation.games
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import com.ozan.core.domain.Interactor
+import androidx.lifecycle.viewModelScope
+import com.ozan.core.domain.UseCase
 import com.ozan.core.error.ErrorFactory
 import com.ozan.core.model.DataHolder
 import com.ozan.core.presentation.base.BaseViewModel
 import com.ozan.core.presentation.recyclerview.DisplayItem
-import com.ozan.game.domain.Game
-import com.ozan.game.domain.GamesInteractor.Params
+import com.ozan.game.domain.GamesUseCase.Params
 import com.ozan.game.domain.GamesResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.reactivex.Observable
-import io.reactivex.functions.Function
-import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class GamesViewModel @Inject constructor(
-    private val interactor: Interactor.ReactiveRetrieveInteractor<Params, GamesResponse>,
-    private val mapper: Function<Game, DisplayItem>,
+    private val useCaseFlow: UseCase.FlowRetrieveUseCase<Params, GamesResponse>,
+    private val mapper: GameViewEntityMapper,
     private val errorFactory: ErrorFactory
 ) : BaseViewModel() {
 
@@ -56,41 +55,22 @@ class GamesViewModel @Inject constructor(
         _gamesLiveData.value = DataHolder.Loading()
         val params = Params(page)
 
-        val gamesFetchDisposable = interactor.execute(params)
-            .observeOn(Schedulers.computation())
-            .subscribeOn(Schedulers.io())
-            .subscribe({
-
-                when (it) {
+        viewModelScope.launch {
+            useCaseFlow.execute(params).collect { dataHolder ->
+                when(dataHolder) {
+                    is DataHolder.Fail -> _gamesLiveData.postValue(DataHolder.Fail(dataHolder.e))
                     is DataHolder.Success -> {
-                        this.page.currentPage++
-                        count = it.data.count!!
+                        this@GamesViewModel.page.currentPage++
+                        count = dataHolder.data.count!!
 
-
-                        Observable.fromIterable(it.data.results)
-                            .map { item -> mapper.apply(item) }
-                            .toList()
-                            .blockingGet()
-                            .run {
-                                _gamesLiveData.postValue(DataHolder.Success(this))
-                                games.addAll(this)
-                            }
+                        val displayItems = dataHolder.data.results?.map { mapper.apply(it) } ?: arrayListOf()
+                        _gamesLiveData.postValue(DataHolder.Success(displayItems))
+                        games.addAll(displayItems)
                     }
-                    is DataHolder.Fail -> {
-                        _gamesLiveData.postValue(DataHolder.Fail(it.e))
-                    }
+                    else -> return@collect
                 }
-            }, {
-                _gamesLiveData.postValue(
-                    DataHolder.Fail(
-                        errorFactory.createErrorFromThrowable(
-                            it
-                        )
-                    )
-                )
-            })
-
-        action(gamesFetchDisposable)
+            }
+        }
     }
 
     data class Page(var currentPage: Int = 1, var pageSize: Int = 20)

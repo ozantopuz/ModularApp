@@ -5,9 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import io.reactivex.Single
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 
 class RecyclerViewAdapter constructor(
     private val items: MutableList<DisplayItem> = ArrayList(),
@@ -38,18 +35,17 @@ class RecyclerViewAdapter constructor(
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun updateAllItems(newItems: List<DisplayItem>) {
         updateItems(newItems)
         notifyDataSetChanged()
     }
 
-    @SuppressLint("CheckResult")
     override fun updateOnlyChangedItems(newItems: List<DisplayItem>) {
-        Single.fromCallable { calculateDiffResult(newItems) }
-            .subscribeOn(Schedulers.computation())
-            .observeOn(AndroidSchedulers.mainThread())
-            .doOnSuccess { updateItems(newItems) }
-            .subscribe(this::updateWithOnlyDiffResult)
+        updateAllItems(newItems)
+        val diffResult = calculateDiffResult(newItems)
+        updateItems(newItems)
+        updateWithOnlyDiffResult(diffResult)
     }
 
     override fun updateItems(newItems: List<DisplayItem>) {
@@ -76,5 +72,6 @@ class RecyclerViewAdapter constructor(
         notifyItemRangeChanged(startRange, newItems.size)
     }
 
-    private fun calculateDiffResult(newItems: List<DisplayItem>): DiffUtil.DiffResult = calculateDiff(newItems)
+    private fun calculateDiffResult(newItems: List<DisplayItem>): DiffUtil.DiffResult =
+        calculateDiff(newItems)
 }

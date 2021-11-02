@@ -1,19 +1,19 @@
 package com.ozan.game.presentation.gamedetail
 
+import com.ozan.core.mapper.Mapper
 import com.ozan.core.presentation.recyclerview.DisplayItem
 import com.ozan.game.domain.GameDetail
-import io.reactivex.functions.Function
 
-class GameDetailViewEntityMapper : Function<GameDetail, DisplayItem> {
+class GameDetailViewEntityMapper : Mapper<GameDetail, DisplayItem> {
 
-    override fun apply(gameDetail: GameDetail): DisplayItem {
+    override suspend fun apply(item: GameDetail): DisplayItem {
         return GameDetailViewEntity(
-            id = gameDetail.id,
-            name = gameDetail.name,
-            description = gameDetail.description,
-            release = gameDetail.released,
-            backgroundImage = gameDetail.backgroundImage,
-            rating = gameDetail.rating
+            id = item.id,
+            name = item.name,
+            description = item.description,
+            release = item.released,
+            backgroundImage = item.backgroundImage,
+            rating = item.rating
         )
     }
 }

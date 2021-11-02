@@ -1,5 +1,6 @@
 package com.ozan.game.presentation
 
+import com.ozan.core.mapper.Mapper
 import com.ozan.core.presentation.recyclerview.*
 import com.ozan.game.domain.Game
 import com.ozan.game.domain.GameDetail
@@ -14,7 +15,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import dagger.multibindings.IntKey
 import dagger.multibindings.IntoMap
-import io.reactivex.functions.Function
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -33,10 +33,10 @@ abstract class GamePresentationModule {
     companion object {
 
         @Provides
-        fun provideGameViewEntityMapper(): Function<Game, DisplayItem> = GameViewEntityMapper()
+        fun provideGameViewEntityMapper(): GameViewEntityMapper = GameViewEntityMapper()
 
         @Provides
-        fun provideGameDetailViewEntityMapper(): Function<GameDetail, DisplayItem> = GameDetailViewEntityMapper()
+        fun provideGameDetailViewEntityMapper(): GameDetailViewEntityMapper = GameDetailViewEntityMapper()
 
         @Provides
         fun provideDisplayItemComparator(): DisplayItemComparator = DefaultDisplayItemComparator()

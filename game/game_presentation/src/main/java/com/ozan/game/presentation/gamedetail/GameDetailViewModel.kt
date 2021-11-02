@@ -2,22 +2,23 @@ package com.ozan.game.presentation.gamedetail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import com.ozan.core.domain.Interactor
+import androidx.lifecycle.viewModelScope
+import com.ozan.core.domain.UseCase
 import com.ozan.core.error.ErrorFactory
 import com.ozan.core.model.DataHolder
 import com.ozan.core.presentation.base.BaseViewModel
 import com.ozan.core.presentation.recyclerview.DisplayItem
 import com.ozan.game.domain.GameDetail
-import com.ozan.game.domain.GameDetailInteractor.Params
+import com.ozan.game.domain.GameDetailUseCase.Params
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.reactivex.functions.Function
-import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class GameDetailViewModel @Inject constructor(
-    private val interactor: Interactor.ReactiveRetrieveInteractor<Params, GameDetail>,
-    private val mapper: Function<GameDetail, DisplayItem>,
+    private val useCase: UseCase.FlowRetrieveUseCase<Params, GameDetail>,
+    private val mapper: GameDetailViewEntityMapper,
     private val errorFactory: ErrorFactory
 ) : BaseViewModel() {
 
@@ -29,25 +30,17 @@ class GameDetailViewModel @Inject constructor(
     fun fetchGameDetail(id: Int) {
         _gameDetailLiveData.value = DataHolder.Loading()
         val params = Params(id)
-        val gameDetailFetchDisposable = interactor.execute(params)
-            .observeOn(Schedulers.computation())
-            .subscribeOn(Schedulers.io())
-            .subscribe({
-                when (it) {
-                    is DataHolder.Success -> {
-                        _gameDetailLiveData.postValue(DataHolder.Success(mapper.apply(it.data)))
-                    }
-                    is DataHolder.Fail -> { _gameDetailLiveData.postValue(DataHolder.Fail(it.e)) }
+
+        viewModelScope.launch {
+            useCase.execute(params).collect { dataHolder ->
+                when(dataHolder) {
+                    is DataHolder.Fail ->
+                        _gameDetailLiveData.postValue(DataHolder.Fail(dataHolder.e))
+                    is DataHolder.Success ->
+                        _gameDetailLiveData.postValue(DataHolder.Success(mapper.apply(dataHolder.data)))
+                    else -> return@collect
                 }
-            }, {
-                _gameDetailLiveData.postValue(
-                    DataHolder.Fail(
-                        errorFactory.createErrorFromThrowable(
-                            it
-                        )
-                    )
-                )
-            })
-        action(gameDetailFetchDisposable)
+            }
+        }
     }
 }

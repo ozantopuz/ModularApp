@@ -39,8 +39,7 @@ object Libraries {
     const val OKHTTP = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP_VERSION}"
     const val VIEW_MODEL = "androidx.lifecycle:lifecycle-viewmodel:${Versions.VIEW_MODEL_VERSION}"
     const val LIFECYCLE_EXTENSIONS = "androidx.lifecycle:lifecycle-extensions:${Versions.VIEW_MODEL_VERSION}"
-    const val RX_KOTLIN = "io.reactivex.rxjava2:rxkotlin:${Versions.RX_KOTLIN_VERSION}"
-    const val RX_ANDROID = "io.reactivex.rxjava2:rxandroid:${Versions.RX_ANDROID_VERSION}"
-    const val RETROFIT_RX_ADAPTER = "com.squareup.retrofit2:adapter-rxjava2:${Versions.RETROFIT_VERSION}"
+    const val COROUTINES_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES_VERSION}"
+    const val COROUTINES_ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES_VERSION}"
     const val GLIDE = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
 }

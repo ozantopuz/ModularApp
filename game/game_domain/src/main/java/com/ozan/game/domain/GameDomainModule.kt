@@ -1,6 +1,6 @@
 package com.ozan.game.domain
 
-import com.ozan.core.domain.Interactor
+import com.ozan.core.domain.UseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,12 +11,12 @@ import dagger.hilt.components.SingletonComponent
 class GameDomainModule {
 
     @Provides
-    fun provideGamesInteractor(gameRepository: GameRepository):
-            Interactor.ReactiveRetrieveInteractor<GamesInteractor.Params, GamesResponse> =
-      GamesInteractor(gameRepository)
+    fun provideGamesUseCase(gameRepository: GameRepository):
+            UseCase.FlowRetrieveUseCase<GamesUseCase.Params, GamesResponse> =
+      GamesUseCase(gameRepository)
 
     @Provides
-    fun provideGameInteractor(gameRepository: GameRepository):
-            Interactor.ReactiveRetrieveInteractor<GameDetailInteractor.Params, GameDetail> =
-        GameDetailInteractor(gameRepository)
+    fun provideGameUseCase(gameRepository: GameRepository):
+            UseCase.FlowRetrieveUseCase<GameDetailUseCase.Params, GameDetail> =
+        GameDetailUseCase(gameRepository)
 }

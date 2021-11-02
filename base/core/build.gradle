@@ -1,8 +1,8 @@
 apply from: "$rootDir/common-android-library.gradle"
 dependencies {
-    //Rx
-    api Libraries.RX_KOTLIN
-    api Libraries.RX_ANDROID
+    //Coroutines
+    api Libraries.COROUTINES_CORE
+    api Libraries.COROUTINES_ANDROID
 
     // Gson
     api Libraries.GSON
